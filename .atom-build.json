@@ -1,0 +1,8 @@
+{
+  "cmd": "{PROJECT_PATH}/run",
+  "args": [ "-H.", "-B./build" ],
+  "sh": true,
+  "cwd": "{PROJECT_PATH}",
+  "errorMatch": [ "(?<file>[\\/0-9a-zA-Z\\._+]+):(?<line>\\d+):(?<col>\\d+)" ],
+  "keymap": "alt-z"
+}

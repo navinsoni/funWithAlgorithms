@@ -1,0 +1,7 @@
+# run takes input from .atom-build.json file
+# It compiles all the cpp files in this repo and keeps them in build directory
+# run and .atom-build.json are useful when atom editor is used.
+# The combination used to compile is "alt-z"
+
+cmake $@
+cd build && make
