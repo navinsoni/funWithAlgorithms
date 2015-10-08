@@ -14,7 +14,20 @@ void Graph::addNode(int n) {
 	}
 }
 
-void Graph::addEdge(int n1, int n2) {
+void Graph::addEdge(int n1, int n2, float dist) {
+
+	map<int, Node * >::iterator it_node = map_node.find(n1);
+	if (it_node == map_node.end())
+	{
+		map_node.insert(pair<int, Node * >(n1, new Node(n1)));
+	}
+
+	it_node = map_node.find(n2);
+	if (it_node == map_node.end())
+	{
+		map_node.insert(pair<int, Node * >(n2, new Node(n2)));
+	}
+
     map<int, list<int> >::iterator it = graph.find(n1);
     if (it == graph.end())
     {
@@ -23,6 +36,8 @@ void Graph::addEdge(int n1, int n2) {
     else {
         (it->second).push_back(n2);
     }
+	it_node = map_node.find(n2);
+	it_node->second->setDistance(dist);
 
 	if ( getState() == Graph::UNORDERED ) {
 	    map<int, list<int> >::iterator it = graph.find(n2);
@@ -33,6 +48,8 @@ void Graph::addEdge(int n1, int n2) {
 	    else {
 	        (it->second).push_back(n1);
 	    }
+		it_node = map_node.find(n1);
+		it_node->second->setDistance(dist);
 	}
 }
 

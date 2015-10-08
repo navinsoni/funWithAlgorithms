@@ -11,18 +11,18 @@ using namespace std;
 class Node
 {
 public:
-    Node(int lab, int lev=-1, int dist=-1):label(lab), level(lev), distance(dist){}
+    Node(int lab, int lev=-1, float dist=-1):label(lab), level(lev), distance(dist){}
 
     int getLevel() { return level; }
     int getLabel() { return label; }
-    int getDistance() { return distance; }
+    float getDistance() { return distance; }
 	void setLevel(const int l) { level = l;}
-	void setDistance(const int d) { distance = d;}
+	void setDistance(const float d) { distance = d;}
 
 private:
     int label;
     int level;
-    int distance;
+    float distance;
 };
 
 class Graph
@@ -41,7 +41,7 @@ public:
     };
 
     void addNode(int n);
-    void addEdge(int n1, int n2);
+    void addEdge(int n1, int n2, float dist=1);
     void printNodes();
     void printEdges();
     State getState() { return state; }
