@@ -9,6 +9,7 @@
 
 ### Include
 Include contains implementation of Algorithms.
+
 |Algorithm|Implementation|
 | :---------: | :---------: |
 | Generic Graph Implementation | [graph.h](include/graph.h) |
