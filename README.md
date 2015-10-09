@@ -13,4 +13,4 @@ Include contains implementation of Algorithms.
 |Algorithm|Implementation|
 | :---------: | :---------: |
 | Generic Graph Implementation | [graph.h](include/graph.h) |
-| Breadth First Search Implementation | [graph.h](include/graph.h) |
+| Breadth First Search Implementation | [bfs.h](include/bfs.h) |
