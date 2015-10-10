@@ -10,14 +10,14 @@
 
 int main(int argc, char* argv[])
 {
-    Graph graph = Graph();
-    graph.addNode(1);
-    graph.addNode(2);
-    graph.addNode(3);
-    graph.addNode(4);
-    graph.addNode(5);
-    graph.addNode(6);
-    graph.addNode(16);
+	Graph graph = Graph();
+	graph.addNode(1);
+	graph.addNode(2);
+	graph.addNode(3);
+	graph.addNode(4);
+	graph.addNode(5);
+	graph.addNode(6);
+	graph.addNode(16);
 
 	graph.addEdge(1,2);
 	graph.addEdge(1,3);
@@ -30,8 +30,8 @@ int main(int argc, char* argv[])
 	graph.addEdge(2,16);
 	graph.addEdge(2,6);
 
-    graph.printNodes();
+	graph.printNodes();
 	graph.printEdges();
 
-    return 0;
+return 0;
 }

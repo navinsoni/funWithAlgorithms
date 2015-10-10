@@ -11,15 +11,15 @@
 
 int main(int argc, char* argv[])
 {
-    Bfs bfs = Bfs(Bfs::State::ORDERED);
-    bfs.addNode(1);
-    bfs.addNode(2);
-    bfs.addNode(3);
-    bfs.addNode(4);
-    bfs.addNode(5);
-    bfs.addNode(6);
-    bfs.addNode(16);
-    bfs.addNode(20);
+	Bfs bfs = Bfs(Bfs::State::ORDERED);
+	bfs.addNode(1);
+	bfs.addNode(2);
+	bfs.addNode(3);
+	bfs.addNode(4);
+	bfs.addNode(5);
+	bfs.addNode(6);
+	bfs.addNode(16);
+	bfs.addNode(20);
 
 	bfs.addEdge(1,2);
 	bfs.addEdge(2,3);
@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
 	bfs.addEdge(5,6);
 	bfs.addEdge(5,16);
 
-    bfs.printNodes();
+	bfs.printNodes();
 	bfs.printEdges();
 
 	bfs.breadthFirstSearch(2);
