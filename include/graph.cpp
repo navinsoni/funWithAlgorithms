@@ -7,10 +7,10 @@ void Graph::addNode(int n) {
         map_node.insert(pair<int, Node * >(n, new Node(n)));
     }
 
-	map<int, list<int> >::iterator it1 = graph.find(n);
+	map<int, list<Node *> >::iterator it1 = graph.find(n);
 	if (it1 == graph.end())
 	{
-		graph.insert(pair<int, list<int> >(n, list<int>()));
+		graph.insert(pair<int, list<Node *> >(n, list<Node *>()));
 	}
 }
 
@@ -28,28 +28,24 @@ void Graph::addEdge(int n1, int n2, float dist) {
 		map_node.insert(pair<int, Node * >(n2, new Node(n2)));
 	}
 
-    map<int, list<int> >::iterator it = graph.find(n1);
+    map<int, list<Node *> >::iterator it = graph.find(n1);
     if (it == graph.end())
     {
-        graph.insert(pair<int, list<int> >(n1, list<int>(1,n2)));
+        graph.insert(pair<int, list<Node*> >(n1, list<Node*>(1,new Node(n2,dist))));
     }
     else {
-        (it->second).push_back(n2);
+        (it->second).push_back(new Node(n2,dist));
     }
-	it_node = map_node.find(n2);
-	it_node->second->setDistance(dist);
 
 	if ( getState() == Graph::UNORDERED ) {
-	    map<int, list<int> >::iterator it = graph.find(n2);
+	    map<int, list<Node *> >::iterator it = graph.find(n2);
 	    if (it == graph.end())
 	    {
-	        graph.insert(pair<int, list<int> >(n1, list<int>(1,n1)));
+	        graph.insert(pair<int, list<Node *> >(n1, list<Node*>(1,new Node(n1,dist))));
 	    }
 	    else {
-	        (it->second).push_back(n1);
+	        (it->second).push_back(new Node(n1,dist));
 	    }
-		it_node = map_node.find(n1);
-		it_node->second->setDistance(dist);
 	}
 }
 
@@ -62,12 +58,12 @@ void Graph::printNodes() {
 
 void Graph::printEdges() {
 	std::cout << "\nThe edges present between nodes are :" << "\n";
-    for (pair<int, list<int> > var : graph)
+    for (pair<int, list<Node *> > var : graph)
 	{
 		std::cout << var.first << ": ";
-		for ( int var1 : var.second)
+		for ( Node *var1 : var.second)
 		{
-			std::cout << var1 << " ";
+			std::cout << var1->getLabel() << " ";
 		}
     	cout << endl;
 	}

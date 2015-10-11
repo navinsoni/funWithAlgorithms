@@ -2,7 +2,7 @@
 
 void Bfs::breadthFirstSearch(int n){
 
-	map <int, list<int> > graph = getGraph();
+	map <int, list<Node *> > graph = getGraph();
 	map <int, Node * > map_node = getMapNode();
 
 	map<int, Node* >::iterator it = map_node.find(n);
@@ -15,11 +15,11 @@ void Bfs::breadthFirstSearch(int n){
 			Node *temp = bfsQueue.front();
 			bfsQueue.pop();
 			int level = temp->getLevel() + 1;
-			map <int, list<int> >::iterator it_graph = graph.find(temp->getLabel());
+			map <int, list<Node *> >::iterator it_graph = graph.find(temp->getLabel());
 			if (it_graph != graph.end()){
-				for (int var : it_graph->second)
+				for (Node *var : it_graph->second)
 				{
-					map<int, Node* >::iterator it_node = map_node.find(var);
+					map<int, Node* >::iterator it_node = map_node.find(var->getLabel());
 					if (it_node != map_node.end())
 					{
 						if(it_node->second->getLevel() == -1 || level < it_node->second->getLevel()){

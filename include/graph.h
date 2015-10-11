@@ -41,17 +41,17 @@ public:
     };
 
     void addNode(int n);
-    void addEdge(int n1, int n2, float dist=1);
+    void addEdge(int n1, int n2, float dist=-1);
     void printNodes();
     void printEdges();
     State getState() { return state; }
 
 protected:
-	map <int, list<int> >& getGraph() { return graph; }
+	map <int, list<Node *> >& getGraph() { return graph; }
 	map <int, Node * >& getMapNode() { return map_node; }
 
 private:
-    map <int, list<int> > graph;
+    map <int, list<Node *> > graph;
     map <int, Node * > map_node;
     Graph::State state;
 };
