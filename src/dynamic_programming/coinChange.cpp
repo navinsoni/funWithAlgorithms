@@ -8,20 +8,19 @@ using namespace std;
 
 
 int main() {
-    int N,M;
+	int N,M;
 	cout<<"Enter the Amount and No. of distinct coins:(eg. 4 3) ";
 	cin>>N>>M;
-
 	cout<<"Enter list of distinct coins:(eg. 1 2 3) ";
-
 	vector<int> coins;
 	int temp;
 	for (int i=0; i<M; i++){
 		cin>>temp;
 		coins.push_back(temp);
 	}
-
+	
 	sort(coins.begin(), coins.end());
+
 	vector< vector<long long int> > mat(M);
 	for (int i=0; i<=M; i++){
 		mat[i].resize(N+1);

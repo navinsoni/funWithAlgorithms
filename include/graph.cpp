@@ -7,44 +7,44 @@ void Graph::addNode(int n) {
         map_node.insert(pair<int, Node * >(n, new Node(n)));
     }
 
-	map<int, list<Node *> >::iterator it1 = graph.find(n);
+	map<int, list<Edge> >::iterator it1 = graph.find(n);
 	if (it1 == graph.end())
 	{
-		graph.insert(pair<int, list<Node *> >(n, list<Node *>()));
+		graph.insert(pair<int, list<Edge> >(n, list<Edge>()));
 	}
 }
 
 void Graph::addEdge(int n1, int n2, float dist) {
 
-	map<int, Node * >::iterator it_node = map_node.find(n1);
-	if (it_node == map_node.end())
+	map<int, Node * >::iterator it_node1 = map_node.find(n1);
+	if (it_node1 == map_node.end())
 	{
 		map_node.insert(pair<int, Node * >(n1, new Node(n1)));
 	}
 
-	it_node = map_node.find(n2);
-	if (it_node == map_node.end())
+	map<int, Node * >::iterator it_node2 = map_node.find(n2);
+	if (it_node2 == map_node.end())
 	{
 		map_node.insert(pair<int, Node * >(n2, new Node(n2)));
 	}
 
-    map<int, list<Node *> >::iterator it = graph.find(n1);
+    map<int, list<Edge> >::iterator it = graph.find(n1);
     if (it == graph.end())
     {
-        graph.insert(pair<int, list<Node*> >(n1, list<Node*>(1,new Node(n2,dist))));
+        graph.insert(pair<int, list<Edge> >(n1, list<Edge>(1,Edge(it_node1->second,it_node2->second,dist))));
     }
     else {
-        (it->second).push_back(new Node(n2,dist));
+        (it->second).push_back(Edge(it_node1->second,it_node2->second,dist));
     }
 
 	if ( getState() == Graph::UNORDERED ) {
-	    map<int, list<Node *> >::iterator it = graph.find(n2);
+	    map<int, list<Edge> >::iterator it = graph.find(n2);
 	    if (it == graph.end())
 	    {
-	        graph.insert(pair<int, list<Node *> >(n1, list<Node*>(1,new Node(n1,dist))));
+	        graph.insert(pair<int, list<Edge> >(n1, list<Edge>(1,Edge(it_node2->second,it_node1->second,dist))));
 	    }
 	    else {
-	        (it->second).push_back(new Node(n1,dist));
+	        (it->second).push_back(Edge(it_node2->second,it_node1->second,dist));
 	    }
 	}
 }
@@ -58,12 +58,12 @@ void Graph::printNodes() {
 
 void Graph::printEdges() {
 	std::cout << "\nThe edges present between nodes are :" << "\n";
-    for (pair<int, list<Node *> > var : graph)
+    for (pair<int, list<Edge> > var : graph)
 	{
 		std::cout << var.first << ": ";
-		for ( Node *var1 : var.second)
+		for ( Edge var1 : var.second)
 		{
-			std::cout << var1->getLabel() << " ";
+			std::cout << var1.getNode2()->getLabel() << " ";
 		}
     	cout << endl;
 	}
