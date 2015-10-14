@@ -1,5 +1,5 @@
-#ifndef _BFS_H_
-#define _BFS_H_
+#ifndef _KRUSKALS_H_
+#define _KRUSKALS_H_
 
 #include "graph.h"
 #include <queue>
@@ -14,4 +14,4 @@ public:
 private:
 	queue<Node *> bfsQueue;
 };
-#endif // _BFS_H_
+#endif // _KRUSKALS_H_
