@@ -9,14 +9,13 @@ public:
 	Node* getNode1() {return nodes[0];}
 	Node* getNode2() {return nodes[1];}
 	long long int getWeight() const {return weight;}
-
-	bool operator< (Edge const &temp){
-		if(getWeight() < temp.getWeight()) return true;
-		return false;
-	}
 private:
 	Node *nodes[2];
 	long long int weight;
 };
+
+static bool operator< (const Edge &temp1, const Edge &temp2) {
+	return (temp1.getWeight() < temp2.getWeight());
+}
 
 #endif // _EDGE_H_

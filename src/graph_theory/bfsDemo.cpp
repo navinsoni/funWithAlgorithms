@@ -1,6 +1,6 @@
 /*
 * This demo uses bfs.h library from include directory
-* The Bfs can be ordered/unordered. It can be specified
+* The graph can be ordered/unordered. It can be specified
 * by passing Bfs::State::ORDERED in Bfs constructor
 * eg: Bfs(Bfs::State::ORDERED);
 * by default graph is unordered.

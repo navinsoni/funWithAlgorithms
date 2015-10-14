@@ -10,7 +10,7 @@ void Kruskals::minimumSpanningTreeWt(){
 		for (Edge edge : var.second)
 			edges.push_front(edge);
 
-	// edges.sort();
+	edges.sort();
 	vector<int> node(N+1, 0);
 
 	int count = N;

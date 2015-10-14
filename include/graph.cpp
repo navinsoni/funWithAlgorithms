@@ -67,4 +67,5 @@ void Graph::printEdges() {
 		}
     	cout << endl;
 	}
+	cout << endl;
 }
