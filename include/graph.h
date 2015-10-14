@@ -5,43 +5,10 @@
 #include <map>
 #include <list>
 #include <queue>
+#include "edge.h"
+#include "node.h"
 
 using namespace std;
-
-class Node
-{
-public:
-    Node(int lab, int lev=-1, float dist=-1):label(lab), level(lev), distance(dist){}
-
-    int getLevel() { return level; }
-    int getLabel() { return label; }
-    float getDistance() { return distance; }
-	void setLevel(const int l) { level = l;}
-	void setDistance(const float d) { distance = d;}
-
-private:
-    int label;
-    int level;
-    float distance;
-};
-
-class Edge
-{
-public:
-	Edge(Node *n1, Node *n2, long long int wt = -1):nodes{n1,n2},weight(wt){}
-	Node* getNode1() {return nodes[0];}
-	Node* getNode2() {return nodes[1];}
-	long long int getWeight() const {return weight;}
-
-	bool operator< (Edge const &temp){
-		if(getWeight() < temp.getWeight()) return true;
-		return false;
-	}
-private:
-	Node *nodes[2];
-	long long int weight;
-};
-
 
 class Graph
 {
