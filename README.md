@@ -12,6 +12,11 @@
 | :---------: | :---------: |
 | How many different ways can you make change for an amount, given a list of coins?| [coinChange.cpp](src/dynamic_programming/coinChange.cpp) |
 
+### Cpp General
+|Problem|Solution|
+| :---------: | :---------: |
+| Reverse Polish notation | [reversePolishNotation.cpp](src/cppGeneral/reversePolishNotation.cpp) |
+
 ### Include
 Include contains implementation of Algorithms.
 
