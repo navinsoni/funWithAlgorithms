@@ -15,7 +15,7 @@
 ### Cpp General
 |Problem|Solution|
 | :---------: | :---------: |
-| Reverse Polish notation | [reversePolishNotation.cpp](src/cppGeneral/reversePolishNotation.cpp) |
+| Reverse Polish Notation | [reversePolishNotation.cpp](src/cppGeneral/reversePolishNotation.cpp) |
 
 ### Include
 Include contains implementation of Algorithms.
