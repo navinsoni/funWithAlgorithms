@@ -11,6 +11,7 @@
 |Problem|Solution|
 | :---------: | :---------: |
 | How many different ways can you make change for an amount, given a list of coins?| [coinChange.cpp](src/dynamic_programming/coinChange.cpp) |
+| Print Febonacci number of the input location | [febonacci.cpp](src/dynamic_programming/febonacci.cpp) |
 
 ### Cpp General
 |Problem|Solution|
