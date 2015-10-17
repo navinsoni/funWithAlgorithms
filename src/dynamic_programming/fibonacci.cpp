@@ -3,16 +3,16 @@
 
 using namespace std;
 
-class Febonacci{
+class Fibonacci{
 	map<int,long long int> M;
-	Febonacci(){
+	Fibonacci(){
 		M[0] = 0;
 		M[1] = 1;
 	}
 
 public:
-	static Febonacci getObject(){
-		static Febonacci obj = Febonacci();
+	static Fibonacci getObject(){
+		static Fibonacci obj = Fibonacci();
 		return obj;
 	}
 
@@ -31,7 +31,7 @@ public:
 
 int main(){
 	int N;
-	Febonacci obj = Febonacci::getObject();
+	Fibonacci obj = Fibonacci::getObject();
 	cout<<"Input no: ";
 	cin>>N;
 	long long int val = obj.getvalue(N);
