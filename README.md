@@ -17,6 +17,7 @@
 |Problem|Solution|
 | :---------: | :---------: |
 | Reverse Polish Notation | [reversePolishNotation.cpp](src/cppGeneral/reversePolishNotation.cpp) |
+| Output word in dictionary for given jumbled word | [jumble.cpp](src/cppGeneral/jumble.cpp) |
 
 ### Include
 Include contains implementation of Algorithms.
