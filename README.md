@@ -11,6 +11,7 @@
 |Problem|Solution|
 | :---------: | :---------: |
 | How many different ways can you make change for an amount, given a list of coins?| [coinChange.cpp](src/dynamic_programming/coinChange.cpp) |
+| Minimum number of coins required for an amount, given a list of coins?| [minCoin.cpp](src/dynamic_programming/minCoin.cpp) |
 | Print Fibonacci number of the input location | [fibonacci.cpp](src/dynamic_programming/fibonacci.cpp) |
 
 ### Cpp General
