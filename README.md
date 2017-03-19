@@ -19,6 +19,7 @@
 | :---------: | :---------: |
 | Reverse Polish Notation | [reversePolishNotation.cpp](src/cppGeneral/reversePolishNotation.cpp) |
 | Output word in dictionary for given jumbled word | [jumble.cpp](src/cppGeneral/jumble.cpp) |
+| Design a Data Structure that supports get(int idx), set(int idx, int val), and setAll(int val) all in constant time | [customDs.cpp](src/cppGeneral/customDs.cpp) |
 
 ### Include
 Include contains implementation of Algorithms.
